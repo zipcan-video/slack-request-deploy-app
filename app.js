@@ -11,7 +11,7 @@ const sendRequest = async function (req, res, next) {
     console.log(req.body);
 
     const webhookUrl = "https://hooks.slack.com/services/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";
-    const testUrl = "https://hooks.slack.com/services/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";
+    const testUrl = "https://hooks.slack.com/services/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";
 
     let payload = {
       blocks: [

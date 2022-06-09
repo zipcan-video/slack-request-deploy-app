@@ -11,8 +11,9 @@ const sendRequest = async function (req, res, next) {
     console.log(req.body);
 
     const webhookUrl = "https://hooks.slack.com/services/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";
-    const testUrl = "https://hooks.slack.com/services/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";
-    await axios.post(testUrl, {
+    const testUrl = "https://hooks.slack.com/services/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";
+
+    let payload = {
       blocks: [
         {
           type: "header",
@@ -43,11 +44,14 @@ const sendRequest = async function (req, res, next) {
           },
         },
       ],
-    });
+    };
+
+    await axios.post(testUrl, payload);
     res.json({ result: "ok" });
   } catch (e) {
     console.error(e);
-    res.json(500, { error: e });
+    res.status(500);
+    res.json({ error: e });
   }
 };
 
